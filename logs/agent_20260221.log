@@ -1,0 +1,400 @@
+2026-02-21 16:51:40 [INFO] RoomBookingAgent: ============================================================
+2026-02-21 16:51:40 [INFO] RoomBookingAgent: Room Booking AI Agent Starting
+2026-02-21 16:51:40 [INFO] RoomBookingAgent:   Gmail    : nikshithhpalan@gmail.com
+2026-02-21 16:51:40 [INFO] RoomBookingAgent:   Hotel    : https://booking.heykoala.ai/
+2026-02-21 16:51:40 [INFO] RoomBookingAgent:   Username : denisonsadmin
+2026-02-21 16:51:40 [INFO] RoomBookingAgent:   Interval : 60s
+2026-02-21 16:51:40 [INFO] RoomBookingAgent:   Headless : false
+2026-02-21 16:51:40 [INFO] RoomBookingAgent: ============================================================
+2026-02-21 16:51:40 [INFO] RoomBookingAgent: ------------------------------------------------------------
+2026-02-21 16:51:40 [INFO] RoomBookingAgent: Checking Gmail for new booking requests ...
+2026-02-21 16:51:42 [INFO] BookingParser: Claude AI parser initialized.
+2026-02-21 16:51:46 [INFO] RoomBookingAgent: No new booking emails.
+2026-02-21 16:51:46 [INFO] apscheduler.scheduler: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-02-21 16:51:46 [INFO] RoomBookingAgent: Scheduler running. Checking every 60s. Ctrl+C to stop.
+2026-02-21 16:51:46 [INFO] apscheduler.scheduler: Added job "process_booking_emails" to job store "default"
+2026-02-21 16:51:46 [INFO] apscheduler.scheduler: Scheduler started
+2026-02-21 16:52:46 [INFO] apscheduler.executors.default: Running job "process_booking_emails (trigger: interval[0:01:00], next run at: 2026-02-21 16:53:46 IST)" (scheduled at 2026-02-21 16:52:46.581931+05:30)
+2026-02-21 16:52:46 [INFO] RoomBookingAgent: ------------------------------------------------------------
+2026-02-21 16:52:46 [INFO] RoomBookingAgent: Checking Gmail for new booking requests ...
+2026-02-21 16:52:47 [INFO] BookingParser: Claude AI parser initialized.
+2026-02-21 16:52:51 [INFO] RoomBookingAgent: No new booking emails.
+2026-02-21 16:52:51 [INFO] apscheduler.executors.default: Job "process_booking_emails (trigger: interval[0:01:00], next run at: 2026-02-21 16:53:46 IST)" executed successfully
+2026-02-21 16:53:46 [INFO] apscheduler.executors.default: Running job "process_booking_emails (trigger: interval[0:01:00], next run at: 2026-02-21 16:54:46 IST)" (scheduled at 2026-02-21 16:53:46.581931+05:30)
+2026-02-21 16:53:46 [INFO] RoomBookingAgent: ------------------------------------------------------------
+2026-02-21 16:53:46 [INFO] RoomBookingAgent: Checking Gmail for new booking requests ...
+2026-02-21 16:53:46 [INFO] BookingParser: Claude AI parser initialized.
+2026-02-21 16:53:49 [INFO] EmailReader: 📬 Found 1 unread booking email(s).
+2026-02-21 16:53:50 [INFO] RoomBookingAgent: 1 new request(s) found.
+2026-02-21 16:53:50 [INFO] RoomBookingAgent: From: nikshithharish1234@gmail.com  |  Room Booking
+2026-02-21 16:53:51 [INFO] httpx: HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 401 Unauthorized"
+2026-02-21 16:53:51 [WARNING] BookingParser: Claude parsing failed (Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011CYM8TTFGNzccGzv5iHCsE'}), falling back to regex.
+2026-02-21 16:53:51 [INFO] BookingParser: Used regex for parsing.
+2026-02-21 16:53:51 [INFO] BookingParser: Final parsed details: {'guest_name': 'nikshith nikshith', 'check_in': '2026-03-22', 'check_out': '2026-03-25', 'room_type': 'Deluxe', 'num_adults': 2, 'num_children': 0}
+2026-02-21 16:53:51 [INFO] RoomBookingAgent: Parsed: {'guest_name': 'nikshith nikshith', 'check_in': '2026-03-22', 'check_out': '2026-03-25', 'room_type': 'Deluxe', 'num_adults': 2, 'num_children': 0, 'guest_email': 'nikshithharish1234@gmail.com'}
+2026-02-21 16:53:51 [INFO] BookingService: Launching browser ...
+2026-02-21 16:53:54 [INFO] BookingService: Logging in ...
+2026-02-21 16:53:58 [INFO] BookingService: Logged in -> https://booking.heykoala.ai/
+2026-02-21 16:53:58 [INFO] BookingService: Navigating to Bookings ...
+2026-02-21 16:54:31 [INFO] BookingService: Opening modal ...
+2026-02-21 16:54:32 [INFO] BookingService: Modal opened.
+2026-02-21 16:54:32 [INFO] BookingService: Detected fields: {'inputs': [{'id': 'searchBookings', 'name': '', 'type': 'text', 'placeholder': 'Search bookings...', 'className': ''}, {'id': 'filterFromDate', 'name': '', 'type': 'date', 'placeholder': '', 'className': 'filter-date'}, {'id': 'filterToDate', 'name': '', 'type': 'date', 'placeholder': '', 'className': 'filter-date'}, {'id': 'bookingGuestName', 'name': '', 'type': 'text', 'placeholder': 'John Doe', 'className': ''}, {'id': 'bookingEmail', 'name': '', 'type': 'email', 'placeholder': 'john@example.com', 'className': ''}, {'id': 'bookingCheckIn', 'name': '', 'type': 'date', 'placeholder': '', 'className': ''}, {'id': 'bookingCheckOut', 'name': '', 'type': 'date', 'placeholder': '', 'className': ''}, {'id': 'bookingAdults', 'name': '', 'type': 'number', 'placeholder': '', 'className': ''}, {'id': 'bookingChildren', 'name': '', 'type': 'number', 'placeholder': '', 'className': ''}], 'selects': [{'id': 'filterStatus', 'name': '', 'className': 'filter-select', 'options': ['All Status', 'Confirmed', 'Cancelled']}, {'id': 'bookingRoomType', 'name': '', 'className': '', 'options': ['Select Room Type', 'Premium Suite (₹9440/night)', 'Deluxe Room (₹7150/night)', 'Executive Room (₹6050/night)', 'Family Suite (₹12100/night)', 'Deluxe Sea View Room (₹20060/night)', 'Presidential suite (₹11800/night)']}]}
+2026-02-21 16:54:32 [INFO] BookingService: Filling form: {'guest_name': 'nikshith nikshith', 'check_in': '2026-03-22', 'check_out': '2026-03-25', 'room_type': 'Deluxe', 'num_adults': 2, 'num_children': 0, 'guest_email': 'nikshithharish1234@gmail.com'}
+2026-02-21 16:54:32 [INFO] BookingService:   input[0] id='searchBookings' name='' type='text' placeholder='Search bookings...'
+2026-02-21 16:54:32 [INFO] BookingService:   input[1] id='filterFromDate' name='' type='date' placeholder=''
+2026-02-21 16:54:32 [INFO] BookingService:   input[2] id='filterToDate' name='' type='date' placeholder=''
+2026-02-21 16:54:32 [INFO] BookingService:   input[3] id='bookingGuestName' name='' type='text' placeholder='John Doe'
+2026-02-21 16:54:32 [INFO] BookingService:   input[4] id='bookingEmail' name='' type='email' placeholder='john@example.com'
+2026-02-21 16:54:32 [INFO] BookingService:   input[5] id='bookingCheckIn' name='' type='date' placeholder=''
+2026-02-21 16:54:32 [INFO] BookingService:   input[6] id='bookingCheckOut' name='' type='date' placeholder=''
+2026-02-21 16:54:32 [INFO] BookingService:   input[7] id='bookingAdults' name='' type='number' placeholder=''
+2026-02-21 16:54:32 [INFO] BookingService:   input[8] id='bookingChildren' name='' type='number' placeholder=''
+2026-02-21 16:54:32 [INFO] BookingService:   select[0] id='filterStatus' name='' options=['All Status', 'Confirmed', 'Cancelled']
+2026-02-21 16:54:32 [INFO] BookingService:   select[1] id='bookingRoomType' name='' options=['Select Room Type', 'Premium Suite (₹9440/night)', 'Deluxe Room (₹7150/night)', 'Executive Room (₹6050/night)', 'Family Suite (₹12100/night)', 'Deluxe Sea View Room (₹20060/night)', 'Presidential suite (₹11800/night)']
+2026-02-21 16:54:32 [INFO] BookingService:   name -> nikshith nikshith
+2026-02-21 16:54:32 [INFO] BookingService:   email -> nikshithharish1234@gmail.com
+2026-02-21 16:54:32 [INFO] BookingService:   Filling date field selector='#filterFromDate' with '2026-03-22'
+2026-02-21 16:54:46 [WARNING] apscheduler.scheduler: Execution of job "process_booking_emails (trigger: interval[0:01:00], next run at: 2026-02-21 16:54:46 IST)" skipped: maximum number of running instances reached (1)
+2026-02-21 16:55:02 [WARNING] BookingService:   Date keyboard fill failed: Page.click: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator("#filterFromDate")
+    - locator resolved to <input type="date" id="filterFromDate" class="filter-date"/>
+  - attempting click action
+    2 × waiting for element to be visible, enabled and stable
+      - element is visible, enabled and stable
+      - scrolling into view if needed
+      - done scrolling
+      - <div class="modal-header">…</div> from <div id="bookingModal" class="modal active">…</div> subtree intercepts pointer events
+    - retrying click action
+    - waiting 20ms
+    - waiting for element to be visible, enabled and stable
+    - element is visible, enabled and stable
+    - scrolling into view if needed
+    - done scrolling
+    - <div class="modal-header">…</div> from <div id="bookingModal" class="modal active">…</div> subtree intercepts pointer events
+  2 × retrying click action
+      - waiting 100ms
+      - waiting for element to be visible, enabled and stable
+      - element is visible, enabled and stable
+      - scrolling into view if needed
+      - done scrolling
+      - <div id="bookingModal" class="modal active">…</div> intercepts pointer events
+  13 × retrying click action
+       - waiting 500ms
+       - waiting for element to be visible, enabled and stable
+       - element is visible, enabled and stable
+       - scrolling into view if needed
+       - done scrolling
+       - <div class="modal-header">…</div> from <div id="bookingModal" class="modal active">…</div> subtree intercepts pointer events
+     - retrying click action
+       - waiting 500ms
+       - waiting for element to be visible, enabled and stable
+       - element is visible, enabled and stable
+       - scrolling into view if needed
+       - done scrolling
+       - <div class="modal-header">…</div> from <div id="bookingModal" class="modal active">…</div> subtree intercepts pointer events
+     - retrying click action
+       - waiting 500ms
+       - waiting for element to be visible, enabled and stable
+       - element is visible, enabled and stable
+       - scrolling into view if needed
+       - done scrolling
+       - <div id="bookingModal" class="modal active">…</div> intercepts pointer events
+     - retrying click action
+       - waiting 500ms
+       - waiting for element to be visible, enabled and stable
+       - element is visible, enabled and stable
+       - scrolling into view if needed
+       - done scrolling
+       - <div id="bookingModal" class="modal active">…</div> intercepts pointer events
+  2 × retrying click action
+      - waiting 500ms
+      - waiting for element to be visible, enabled and stable
+      - element is visible, enabled and stable
+      - scrolling into view if needed
+      - done scrolling
+      - <div class="modal-header">…</div> from <div id="bookingModal" class="modal active">…</div> subtree intercepts pointer events
+  - retrying click action
+    - waiting 500ms
+    - waiting for element to be visible, enabled and stable
+    - element is visible, enabled and stable
+    - scrolling into view if needed
+    - done scrolling
+    - <div id="bookingModal" class="modal active">…</div> intercepts pointer events
+  - retrying click action
+    - waiting 500ms
+
+2026-02-21 16:55:02 [INFO] BookingService:   Date set via JS -> 2026-03-22
+2026-02-21 16:55:02 [INFO] BookingService:   check-in -> 2026-03-22
+2026-02-21 16:55:03 [INFO] BookingService:   Filling date field selector='#filterToDate' with '2026-03-25'
+2026-02-21 16:55:33 [WARNING] BookingService:   Date keyboard fill failed: Page.click: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator("#filterToDate")
+    - locator resolved to <input type="date" id="filterToDate" class="filter-date"/>
+  - attempting click action
+    2 × waiting for element to be visible, enabled and stable
+      - element is visible, enabled and stable
+      - scrolling into view if needed
+      - done scrolling
+      - <div class="modal-header">…</div> from <div id="bookingModal" class="modal active">…</div> subtree intercepts pointer events
+    - retrying click action
+    - waiting 20ms
+    2 × waiting for element to be visible, enabled and stable
+      - element is visible, enabled and stable
+      - scrolling into view if needed
+      - done scrolling
+      - <div class="modal-header">…</div> from <div id="bookingModal" class="modal active">…</div> subtree intercepts pointer events
+    - retrying click action
+      - waiting 100ms
+    56 × waiting for element to be visible, enabled and stable
+       - element is visible, enabled and stable
+       - scrolling into view if needed
+       - done scrolling
+       - <div class="modal-header">…</div> from <div id="bookingModal" class="modal active">…</div> subtree intercepts pointer events
+     - retrying click action
+       - waiting 500ms
+
+2026-02-21 16:55:33 [INFO] BookingService:   Date set via JS -> 2026-03-25
+2026-02-21 16:55:33 [INFO] BookingService:   check-out -> 2026-03-25
+2026-02-21 16:55:34 [INFO] BookingService:   room type -> Deluxe
+2026-02-21 16:55:34 [INFO] BookingService:   adults -> 2
+2026-02-21 16:55:34 [INFO] BookingService:   children -> 0
+2026-02-21 16:55:35 [INFO] BookingService: Screenshot saved: logs/screenshot_form_filled_20260221_165535.png
+2026-02-21 16:55:35 [INFO] BookingService: Form filled.
+2026-02-21 16:55:35 [INFO] BookingService: Clicking Confirm Booking ...
+2026-02-21 16:55:38 [INFO] BookingService: Screenshot saved: logs/screenshot_after_confirm_20260221_165538.png
+2026-02-21 16:55:39 [WARNING] RoomBookingAgent: Booking failed: Booking result unclear. Check logs/screenshots.
+2026-02-21 16:55:44 [INFO] EmailSender: 📧 Failure notification sent to nikshithharish1234@gmail.com
+2026-02-21 16:55:45 [INFO] RoomBookingAgent: Agent stopped. Goodbye!
+2026-02-21 16:55:47 [INFO] RoomBookingAgent: All emails processed.
+2026-02-21 16:55:47 [INFO] apscheduler.executors.default: Job "process_booking_emails (trigger: interval[0:01:00], next run at: 2026-02-21 16:55:46 IST)" executed successfully
+2026-02-21 17:04:45 [INFO] RoomBookingAgent: ============================================================
+2026-02-21 17:04:45 [INFO] RoomBookingAgent: Room Booking AI Agent Starting
+2026-02-21 17:04:45 [INFO] RoomBookingAgent:   Gmail    : nikshithhpalan@gmail.com
+2026-02-21 17:04:45 [INFO] RoomBookingAgent:   Hotel    : https://booking.heykoala.ai/
+2026-02-21 17:04:45 [INFO] RoomBookingAgent:   Username : denisonsadmin
+2026-02-21 17:04:45 [INFO] RoomBookingAgent:   Interval : 60s
+2026-02-21 17:04:45 [INFO] RoomBookingAgent:   Headless : false
+2026-02-21 17:04:45 [INFO] RoomBookingAgent: ============================================================
+2026-02-21 17:04:45 [INFO] RoomBookingAgent: ------------------------------------------------------------
+2026-02-21 17:04:45 [INFO] RoomBookingAgent: Checking Gmail for new booking requests ...
+2026-02-21 17:04:48 [INFO] BookingParser: Claude AI parser initialized.
+2026-02-21 17:04:51 [INFO] RoomBookingAgent: No new booking emails.
+2026-02-21 17:04:51 [INFO] apscheduler.scheduler: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-02-21 17:04:51 [INFO] RoomBookingAgent: Scheduler running. Checking every 60s. Ctrl+C to stop.
+2026-02-21 17:04:51 [INFO] apscheduler.scheduler: Added job "process_booking_emails" to job store "default"
+2026-02-21 17:04:51 [INFO] apscheduler.scheduler: Scheduler started
+2026-02-21 17:05:51 [INFO] apscheduler.executors.default: Running job "process_booking_emails (trigger: interval[0:01:00], next run at: 2026-02-21 17:06:51 IST)" (scheduled at 2026-02-21 17:05:51.594547+05:30)
+2026-02-21 17:05:51 [INFO] RoomBookingAgent: ------------------------------------------------------------
+2026-02-21 17:05:51 [INFO] RoomBookingAgent: Checking Gmail for new booking requests ...
+2026-02-21 17:05:51 [INFO] BookingParser: Claude AI parser initialized.
+2026-02-21 17:05:55 [INFO] EmailReader: 📬 Found 1 unread booking email(s).
+2026-02-21 17:05:56 [INFO] RoomBookingAgent: 1 new request(s) found.
+2026-02-21 17:05:56 [INFO] RoomBookingAgent: From: nikshithharish1234@gmail.com  |  Room Booking
+2026-02-21 17:05:58 [INFO] httpx: HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 401 Unauthorized"
+2026-02-21 17:05:58 [WARNING] BookingParser: Claude parsing failed (Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011CYM9Nza9fxjWL86vcSEXh'}), falling back to regex.
+2026-02-21 17:05:58 [INFO] BookingParser: Used regex for parsing.
+2026-02-21 17:05:58 [INFO] BookingParser: Final parsed details: {'guest_name': 'nikshith nikshith', 'check_in': '2026-03-22', 'check_out': '2026-03-25', 'room_type': 'Deluxe', 'num_adults': 2, 'num_children': 0}
+2026-02-21 17:05:58 [INFO] RoomBookingAgent: Parsed: {'guest_name': 'nikshith nikshith', 'check_in': '2026-03-22', 'check_out': '2026-03-25', 'room_type': 'Deluxe', 'num_adults': 2, 'num_children': 0, 'guest_email': 'nikshithharish1234@gmail.com'}
+2026-02-21 17:05:58 [INFO] BookingService: Launching browser ...
+2026-02-21 17:06:19 [INFO] BookingService: Logging in ...
+2026-02-21 17:06:23 [INFO] BookingService: Logged in -> https://booking.heykoala.ai/
+2026-02-21 17:06:23 [INFO] BookingService: Navigating to Bookings ...
+2026-02-21 17:06:51 [WARNING] apscheduler.scheduler: Execution of job "process_booking_emails (trigger: interval[0:01:00], next run at: 2026-02-21 17:06:51 IST)" skipped: maximum number of running instances reached (1)
+2026-02-21 17:06:57 [INFO] BookingService: On bookings page -> https://booking.heykoala.ai/
+2026-02-21 17:06:57 [INFO] BookingService: Opening modal ...
+2026-02-21 17:06:57 [INFO] BookingService: Modal opened.
+2026-02-21 17:06:57 [INFO] BookingService: Filling form: {'guest_name': 'nikshith nikshith', 'check_in': '2026-03-22', 'check_out': '2026-03-25', 'room_type': 'Deluxe', 'num_adults': 2, 'num_children': 0, 'guest_email': 'nikshithharish1234@gmail.com'}
+2026-02-21 17:06:57 [INFO] BookingService:   name -> 'nikshith nikshith'
+2026-02-21 17:06:58 [INFO] BookingService:   email -> 'nikshithharish1234@gmail.com' via #bookingEmail
+2026-02-21 17:06:58 [INFO] BookingService:   #bookingCheckIn set to '2026-03-22'
+2026-02-21 17:06:58 [INFO] BookingService:   check-in -> '2026-03-22'
+2026-02-21 17:06:58 [INFO] BookingService:   #bookingCheckOut set to '2026-03-25'
+2026-02-21 17:06:58 [INFO] BookingService:   check-out -> '2026-03-25'
+2026-02-21 17:06:58 [INFO] BookingService:   room type -> value='2' for 'Deluxe'
+2026-02-21 17:06:59 [INFO] BookingService:   #bookingAdults set to '2'
+2026-02-21 17:06:59 [INFO] BookingService:   adults -> 2
+2026-02-21 17:06:59 [INFO] BookingService:   #bookingChildren set to '0'
+2026-02-21 17:06:59 [INFO] BookingService:   children -> 0
+2026-02-21 17:07:00 [INFO] BookingService: Screenshot saved: logs/screenshot_form_filled_20260221_170659.png
+2026-02-21 17:07:00 [INFO] BookingService: Form filled - check logs/screenshot_form_filled_*.png
+2026-02-21 17:07:00 [INFO] BookingService: Clicking Confirm Booking ...
+2026-02-21 17:07:02 [INFO] BookingService: Screenshot saved: logs/screenshot_after_confirm_20260221_170702.png
+2026-02-21 17:07:03 [WARNING] RoomBookingAgent: Booking failed: Booking result unclear. Check logs/screenshots.
+2026-02-21 17:07:09 [INFO] EmailSender: 📧 Failure notification sent to nikshithharish1234@gmail.com
+2026-02-21 17:07:13 [INFO] RoomBookingAgent: All emails processed.
+2026-02-21 17:07:13 [INFO] apscheduler.executors.default: Job "process_booking_emails (trigger: interval[0:01:00], next run at: 2026-02-21 17:07:51 IST)" executed successfully
+2026-02-21 17:07:18 [INFO] RoomBookingAgent: Agent stopped. Goodbye!
+2026-02-21 17:11:43 [INFO] RoomBookingAgent: ============================================================
+2026-02-21 17:11:43 [INFO] RoomBookingAgent: Room Booking AI Agent Starting
+2026-02-21 17:11:43 [INFO] RoomBookingAgent:   Gmail    : nikshithhpalan@gmail.com
+2026-02-21 17:11:43 [INFO] RoomBookingAgent:   Hotel    : https://booking.heykoala.ai/
+2026-02-21 17:11:43 [INFO] RoomBookingAgent:   Username : denisonsadmin
+2026-02-21 17:11:43 [INFO] RoomBookingAgent:   Interval : 60s
+2026-02-21 17:11:43 [INFO] RoomBookingAgent:   Headless : false
+2026-02-21 17:11:43 [INFO] RoomBookingAgent: ============================================================
+2026-02-21 17:11:43 [INFO] RoomBookingAgent: ------------------------------------------------------------
+2026-02-21 17:11:43 [INFO] RoomBookingAgent: Checking Gmail for new booking requests ...
+2026-02-21 17:11:44 [INFO] BookingParser: Claude AI parser initialized.
+2026-02-21 17:11:48 [INFO] RoomBookingAgent: No new booking emails.
+2026-02-21 17:11:48 [INFO] apscheduler.scheduler: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-02-21 17:11:48 [INFO] RoomBookingAgent: Scheduler running. Checking every 60s. Ctrl+C to stop.
+2026-02-21 17:11:48 [INFO] apscheduler.scheduler: Added job "process_booking_emails" to job store "default"
+2026-02-21 17:11:48 [INFO] apscheduler.scheduler: Scheduler started
+2026-02-21 17:12:48 [INFO] apscheduler.executors.default: Running job "process_booking_emails (trigger: interval[0:01:00], next run at: 2026-02-21 17:13:48 IST)" (scheduled at 2026-02-21 17:12:48.535991+05:30)
+2026-02-21 17:12:48 [INFO] RoomBookingAgent: ------------------------------------------------------------
+2026-02-21 17:12:48 [INFO] RoomBookingAgent: Checking Gmail for new booking requests ...
+2026-02-21 17:12:48 [INFO] BookingParser: Claude AI parser initialized.
+2026-02-21 17:12:52 [INFO] EmailReader: 📬 Found 1 unread booking email(s).
+2026-02-21 17:12:54 [INFO] RoomBookingAgent: 1 new request(s) found.
+2026-02-21 17:12:54 [INFO] RoomBookingAgent: From: nikshithharish1234@gmail.com  |  Room Booking
+2026-02-21 17:12:54 [INFO] httpx: HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 401 Unauthorized"
+2026-02-21 17:12:54 [WARNING] BookingParser: Claude parsing failed (Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011CYM9uiwAuxEhKtRuwRkXy'}), falling back to regex.
+2026-02-21 17:12:54 [INFO] BookingParser: Used regex for parsing.
+2026-02-21 17:12:54 [INFO] BookingParser: Final parsed details: {'guest_name': 'nikshith nikshith', 'check_in': '2026-03-22', 'check_out': '2026-03-25', 'room_type': 'Deluxe', 'num_adults': 2, 'num_children': 0}
+2026-02-21 17:12:54 [INFO] RoomBookingAgent: Parsed: {'guest_name': 'nikshith nikshith', 'check_in': '2026-03-22', 'check_out': '2026-03-25', 'room_type': 'Deluxe', 'num_adults': 2, 'num_children': 0, 'guest_email': 'nikshithharish1234@gmail.com'}
+2026-02-21 17:12:55 [INFO] BookingService: Launching browser ...
+2026-02-21 17:12:56 [INFO] BookingService: Logging in ...
+2026-02-21 17:13:00 [INFO] BookingService: Logged in -> https://booking.heykoala.ai/
+2026-02-21 17:13:00 [INFO] BookingService: Navigating to Bookings ...
+2026-02-21 17:13:34 [INFO] BookingService: On bookings page -> https://booking.heykoala.ai/
+2026-02-21 17:13:34 [INFO] BookingService: Opening modal ...
+2026-02-21 17:13:34 [INFO] BookingService: Modal opened.
+2026-02-21 17:13:34 [INFO] BookingService: Filling form: {'guest_name': 'nikshith nikshith', 'check_in': '2026-03-22', 'check_out': '2026-03-25', 'room_type': 'Deluxe', 'num_adults': 2, 'num_children': 0, 'guest_email': 'nikshithharish1234@gmail.com'}
+2026-02-21 17:13:35 [INFO] BookingService:   name -> 'nikshith nikshith'
+2026-02-21 17:13:35 [INFO] BookingService:   email -> 'nikshithharish1234@gmail.com' via #bookingEmail
+2026-02-21 17:13:35 [INFO] BookingService:   #bookingCheckIn set to '2026-03-22'
+2026-02-21 17:13:35 [INFO] BookingService:   check-in -> '2026-03-22'
+2026-02-21 17:13:35 [INFO] BookingService:   #bookingCheckOut set to '2026-03-25'
+2026-02-21 17:13:35 [INFO] BookingService:   check-out -> '2026-03-25'
+2026-02-21 17:13:35 [INFO] BookingService:   room type -> value='2' for 'Deluxe'
+2026-02-21 17:13:36 [INFO] BookingService:   #bookingAdults set to '2'
+2026-02-21 17:13:36 [INFO] BookingService:   adults -> 2
+2026-02-21 17:13:36 [INFO] BookingService:   #bookingChildren set to '0'
+2026-02-21 17:13:36 [INFO] BookingService:   children -> 0
+2026-02-21 17:13:37 [INFO] BookingService: Screenshot saved: logs/screenshot_form_filled_20260221_171336.png
+2026-02-21 17:13:37 [INFO] BookingService: Form filled - check logs/screenshot_form_filled_*.png
+2026-02-21 17:13:37 [INFO] BookingService: Clicking Confirm Booking ...
+2026-02-21 17:13:37 [INFO] BookingService: Clicked Confirm via: form#bookingForm button[type="submit"]
+2026-02-21 17:13:40 [INFO] BookingService: Screenshot saved: logs/screenshot_after_confirm_20260221_171339.png
+2026-02-21 17:13:40 [WARNING] RoomBookingAgent: Booking failed: Booking result unclear. Check logs/screenshots.
+2026-02-21 17:13:45 [INFO] EmailSender: 📧 Failure notification sent to nikshithharish1234@gmail.com
+2026-02-21 17:13:48 [WARNING] apscheduler.scheduler: Execution of job "process_booking_emails (trigger: interval[0:01:00], next run at: 2026-02-21 17:13:48 IST)" skipped: maximum number of running instances reached (1)
+2026-02-21 17:13:49 [INFO] RoomBookingAgent: All emails processed.
+2026-02-21 17:13:49 [INFO] apscheduler.executors.default: Job "process_booking_emails (trigger: interval[0:01:00], next run at: 2026-02-21 17:14:48 IST)" executed successfully
+2026-02-21 17:13:58 [INFO] RoomBookingAgent: Agent stopped. Goodbye!
+2026-02-21 17:14:01 [INFO] RoomBookingAgent: ============================================================
+2026-02-21 17:14:01 [INFO] RoomBookingAgent: Room Booking AI Agent Starting
+2026-02-21 17:14:01 [INFO] RoomBookingAgent:   Gmail    : nikshithhpalan@gmail.com
+2026-02-21 17:14:01 [INFO] RoomBookingAgent:   Hotel    : https://booking.heykoala.ai/
+2026-02-21 17:14:01 [INFO] RoomBookingAgent:   Username : denisonsadmin
+2026-02-21 17:14:01 [INFO] RoomBookingAgent:   Interval : 60s
+2026-02-21 17:14:01 [INFO] RoomBookingAgent:   Headless : false
+2026-02-21 17:14:01 [INFO] RoomBookingAgent: ============================================================
+2026-02-21 17:14:01 [INFO] RoomBookingAgent: ------------------------------------------------------------
+2026-02-21 17:14:01 [INFO] RoomBookingAgent: Checking Gmail for new booking requests ...
+2026-02-21 17:14:03 [INFO] BookingParser: Claude AI parser initialized.
+2026-02-21 17:14:06 [INFO] RoomBookingAgent: No new booking emails.
+2026-02-21 17:14:06 [INFO] apscheduler.scheduler: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-02-21 17:14:06 [INFO] RoomBookingAgent: Scheduler running. Checking every 60s. Ctrl+C to stop.
+2026-02-21 17:14:06 [INFO] apscheduler.scheduler: Added job "process_booking_emails" to job store "default"
+2026-02-21 17:14:06 [INFO] apscheduler.scheduler: Scheduler started
+2026-02-21 17:15:06 [INFO] apscheduler.executors.default: Running job "process_booking_emails (trigger: interval[0:01:00], next run at: 2026-02-21 17:16:06 IST)" (scheduled at 2026-02-21 17:15:06.283070+05:30)
+2026-02-21 17:15:06 [INFO] RoomBookingAgent: ------------------------------------------------------------
+2026-02-21 17:15:06 [INFO] RoomBookingAgent: Checking Gmail for new booking requests ...
+2026-02-21 17:15:06 [INFO] BookingParser: Claude AI parser initialized.
+2026-02-21 17:15:09 [INFO] EmailReader: 📬 Found 1 unread booking email(s).
+2026-02-21 17:15:10 [INFO] RoomBookingAgent: 1 new request(s) found.
+2026-02-21 17:15:10 [INFO] RoomBookingAgent: From: nikshithharish1234@gmail.com  |  Room Booking
+2026-02-21 17:15:11 [INFO] httpx: HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 401 Unauthorized"
+2026-02-21 17:15:11 [WARNING] BookingParser: Claude parsing failed (Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011CYMA5oCBvvadLTrax69Sq'}), falling back to regex.
+2026-02-21 17:15:11 [INFO] BookingParser: Used regex for parsing.
+2026-02-21 17:15:11 [INFO] BookingParser: Final parsed details: {'guest_name': 'nikshith nikshith', 'check_in': '2026-03-22', 'check_out': '2026-03-25', 'room_type': 'Deluxe', 'num_adults': 2, 'num_children': 0}
+2026-02-21 17:15:11 [INFO] RoomBookingAgent: Parsed: {'guest_name': 'nikshith nikshith', 'check_in': '2026-03-22', 'check_out': '2026-03-25', 'room_type': 'Deluxe', 'num_adults': 2, 'num_children': 0, 'guest_email': 'nikshithharish1234@gmail.com'}
+2026-02-21 17:15:11 [INFO] BookingService: Launching browser ...
+2026-02-21 17:15:12 [INFO] BookingService: Logging in ...
+2026-02-21 17:15:17 [INFO] BookingService: Logged in -> https://booking.heykoala.ai/
+2026-02-21 17:15:17 [INFO] BookingService: Navigating to Bookings ...
+2026-02-21 17:15:50 [INFO] BookingService: On bookings page -> https://booking.heykoala.ai/
+2026-02-21 17:15:50 [INFO] BookingService: Opening modal ...
+2026-02-21 17:15:51 [INFO] BookingService: Modal opened.
+2026-02-21 17:15:51 [INFO] BookingService: Filling form: {'guest_name': 'nikshith nikshith', 'check_in': '2026-03-22', 'check_out': '2026-03-25', 'room_type': 'Deluxe', 'num_adults': 2, 'num_children': 0, 'guest_email': 'nikshithharish1234@gmail.com'}
+2026-02-21 17:15:51 [INFO] BookingService:   name -> 'nikshith nikshith'
+2026-02-21 17:15:51 [INFO] BookingService:   email -> 'nikshithharish1234@gmail.com' via #bookingEmail
+2026-02-21 17:15:51 [INFO] BookingService:   #bookingCheckIn set to '2026-03-22'
+2026-02-21 17:15:51 [INFO] BookingService:   check-in -> '2026-03-22'
+2026-02-21 17:15:51 [INFO] BookingService:   #bookingCheckOut set to '2026-03-25'
+2026-02-21 17:15:51 [INFO] BookingService:   check-out -> '2026-03-25'
+2026-02-21 17:15:51 [INFO] BookingService:   room type -> value='2' for 'Deluxe'
+2026-02-21 17:15:52 [INFO] BookingService:   #bookingAdults set to '2'
+2026-02-21 17:15:52 [INFO] BookingService:   adults -> 2
+2026-02-21 17:15:52 [INFO] BookingService:   #bookingChildren set to '0'
+2026-02-21 17:15:52 [INFO] BookingService:   children -> 0
+2026-02-21 17:15:53 [INFO] BookingService: Screenshot saved: logs/screenshot_form_filled_20260221_171553.png
+2026-02-21 17:15:53 [INFO] BookingService: Form filled - check logs/screenshot_form_filled_*.png
+2026-02-21 17:15:53 [INFO] BookingService: Clicking Confirm Booking ...
+2026-02-21 17:15:54 [INFO] BookingService: Clicked Confirm via: form#bookingForm button[type="submit"]
+2026-02-21 17:15:56 [INFO] BookingService: Screenshot saved: logs/screenshot_after_confirm_20260221_171556.png
+2026-02-21 17:15:57 [WARNING] RoomBookingAgent: Booking failed: Booking result unclear. Check logs/screenshots.
+2026-02-21 17:16:01 [INFO] EmailSender: 📧 Failure notification sent to nikshithharish1234@gmail.com
+2026-02-21 17:16:04 [INFO] RoomBookingAgent: Agent stopped. Goodbye!
+2026-02-21 17:16:05 [INFO] RoomBookingAgent: All emails processed.
+2026-02-21 17:16:05 [INFO] apscheduler.executors.default: Job "process_booking_emails (trigger: interval[0:01:00], next run at: 2026-02-21 17:16:06 IST)" executed successfully
+2026-02-21 17:18:20 [INFO] RoomBookingAgent: ============================================================
+2026-02-21 17:18:20 [INFO] RoomBookingAgent: Room Booking AI Agent Starting
+2026-02-21 17:18:20 [INFO] RoomBookingAgent:   Gmail    : nikshithhpalan@gmail.com
+2026-02-21 17:18:20 [INFO] RoomBookingAgent:   Hotel    : https://booking.heykoala.ai/
+2026-02-21 17:18:20 [INFO] RoomBookingAgent:   Username : denisonsadmin
+2026-02-21 17:18:20 [INFO] RoomBookingAgent:   Interval : 60s
+2026-02-21 17:18:20 [INFO] RoomBookingAgent:   Headless : false
+2026-02-21 17:18:20 [INFO] RoomBookingAgent: ============================================================
+2026-02-21 17:18:20 [INFO] RoomBookingAgent: ------------------------------------------------------------
+2026-02-21 17:18:20 [INFO] RoomBookingAgent: Checking Gmail for new booking requests ...
+2026-02-21 17:18:22 [INFO] BookingParser: Claude AI parser initialized.
+2026-02-21 17:18:25 [INFO] RoomBookingAgent: No new booking emails.
+2026-02-21 17:18:25 [INFO] apscheduler.scheduler: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-02-21 17:18:25 [INFO] RoomBookingAgent: Scheduler running. Checking every 60s. Ctrl+C to stop.
+2026-02-21 17:18:25 [INFO] apscheduler.scheduler: Added job "process_booking_emails" to job store "default"
+2026-02-21 17:18:25 [INFO] apscheduler.scheduler: Scheduler started
+2026-02-21 17:19:25 [INFO] apscheduler.executors.default: Running job "process_booking_emails (trigger: interval[0:01:00], next run at: 2026-02-21 17:20:25 IST)" (scheduled at 2026-02-21 17:19:25.856908+05:30)
+2026-02-21 17:19:25 [INFO] RoomBookingAgent: ------------------------------------------------------------
+2026-02-21 17:19:25 [INFO] RoomBookingAgent: Checking Gmail for new booking requests ...
+2026-02-21 17:19:26 [INFO] BookingParser: Claude AI parser initialized.
+2026-02-21 17:19:29 [INFO] EmailReader: 📬 Found 1 unread booking email(s).
+2026-02-21 17:19:30 [INFO] RoomBookingAgent: 1 new request(s) found.
+2026-02-21 17:19:30 [INFO] RoomBookingAgent: From: nikshithharish1234@gmail.com  |  Room Booking
+2026-02-21 17:19:31 [INFO] httpx: HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 401 Unauthorized"
+2026-02-21 17:19:31 [WARNING] BookingParser: Claude parsing failed (Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011CYMAQwRa3G5s5HFDxTtT9'}), falling back to regex.
+2026-02-21 17:19:31 [INFO] BookingParser: Used regex for parsing.
+2026-02-21 17:19:31 [INFO] BookingParser: Final parsed details: {'guest_name': 'nikshith nikshith', 'check_in': '2026-03-22', 'check_out': '2026-03-25', 'room_type': 'Deluxe', 'num_adults': 2, 'num_children': 0}
+2026-02-21 17:19:31 [INFO] RoomBookingAgent: Parsed: {'guest_name': 'nikshith nikshith', 'check_in': '2026-03-22', 'check_out': '2026-03-25', 'room_type': 'Deluxe', 'num_adults': 2, 'num_children': 0, 'guest_email': 'nikshithharish1234@gmail.com'}
+2026-02-21 17:19:31 [INFO] BookingService: Launching browser ...
+2026-02-21 17:19:32 [INFO] BookingService: Logging in ...
+2026-02-21 17:19:37 [INFO] BookingService: Logged in -> https://booking.heykoala.ai/
+2026-02-21 17:19:37 [INFO] BookingService: Navigating to Bookings ...
+2026-02-21 17:20:10 [INFO] BookingService: On bookings page -> https://booking.heykoala.ai/
+2026-02-21 17:20:10 [INFO] BookingService: Opening modal ...
+2026-02-21 17:20:11 [INFO] BookingService: Modal opened.
+2026-02-21 17:20:11 [INFO] BookingService: Filling form: {'guest_name': 'nikshith nikshith', 'check_in': '2026-03-22', 'check_out': '2026-03-25', 'room_type': 'Deluxe', 'num_adults': 2, 'num_children': 0, 'guest_email': 'nikshithharish1234@gmail.com'}
+2026-02-21 17:20:11 [INFO] BookingService:   name -> 'nikshith nikshith'
+2026-02-21 17:20:11 [INFO] BookingService:   email -> 'nikshithharish1234@gmail.com' via #bookingEmail
+2026-02-21 17:20:11 [INFO] BookingService:   #bookingCheckIn set to '2026-03-22'
+2026-02-21 17:20:11 [INFO] BookingService:   check-in -> '2026-03-22'
+2026-02-21 17:20:11 [INFO] BookingService:   #bookingCheckOut set to '2026-03-25'
+2026-02-21 17:20:11 [INFO] BookingService:   check-out -> '2026-03-25'
+2026-02-21 17:20:11 [INFO] BookingService:   room type -> value='2' for 'Deluxe'
+2026-02-21 17:20:12 [INFO] BookingService:   #bookingAdults set to '2'
+2026-02-21 17:20:12 [INFO] BookingService:   adults -> 2
+2026-02-21 17:20:12 [INFO] BookingService:   #bookingChildren set to '0'
+2026-02-21 17:20:12 [INFO] BookingService:   children -> 0
+2026-02-21 17:20:13 [INFO] BookingService: Screenshot saved: logs/screenshot_form_filled_20260221_172013.png
+2026-02-21 17:20:13 [INFO] BookingService: Form filled - check logs/screenshot_form_filled_*.png
+2026-02-21 17:20:13 [INFO] BookingService: Clicking Confirm Booking ...
+2026-02-21 17:20:14 [INFO] BookingService: Clicked Confirm via: form#bookingForm button[type="submit"]
+2026-02-21 17:20:16 [INFO] BookingService: Screenshot saved: logs/screenshot_after_confirm_20260221_172016.png
+2026-02-21 17:20:17 [WARNING] RoomBookingAgent: Booking failed: Booking result unclear. Check logs/screenshots.
+2026-02-21 17:20:24 [INFO] EmailSender: 📧 Failure notification sent to nikshithharish1234@gmail.com
+2026-02-21 17:20:25 [WARNING] apscheduler.scheduler: Execution of job "process_booking_emails (trigger: interval[0:01:00], next run at: 2026-02-21 17:20:25 IST)" skipped: maximum number of running instances reached (1)
+2026-02-21 17:20:27 [INFO] RoomBookingAgent: Agent stopped. Goodbye!
+2026-02-21 17:20:27 [INFO] RoomBookingAgent: All emails processed.
+2026-02-21 17:20:27 [INFO] apscheduler.executors.default: Job "process_booking_emails (trigger: interval[0:01:00], next run at: 2026-02-21 17:21:25 IST)" executed successfully
